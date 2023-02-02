@@ -27,5 +27,16 @@ double k2 = double.Parse(Console.ReadLine());
 Console.Write("Введите свободный коэффициент второй прямой: b2 = ");
 double b2 = double.Parse(Console.ReadLine());
 
-double[] teh = FindCross(k1, b1, k2, b2);
-Console.WriteLine($"Точка пересечения двух прямых: ({String.Join(" ; ", teh)})");
+if (k1 == k2 && b1 == b2)
+{
+    Console.WriteLine("Линии совпадают");
+}
+else if (k1 == k2 && b1 != b2)
+{
+    Console.WriteLine("Линии параллельны");
+}
+else
+{
+    double[] teh = FindCross(k1, b1, k2, b2);
+    Console.WriteLine($"Точка пересечения двух прямых: ({String.Join(" ; ", teh)})");
+}
